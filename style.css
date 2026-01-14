@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(#ffe4ef, #fff);
+  overflow: hidden;
+}
+
+.livro {
+  perspective: 2000px;
+}
+
+.pagina {
+  position: absolute;
+  inset: 0;
+  padding: 30px;
+  text-align: center;
+  background: #fff;
+  transform-origin: left;
+  transform: rotateY(0deg);
+  transition: transform 1s;
+  backface-visibility: hidden;
+  display: none;
+}
+
+.pagina.ativa {
+  display: block;
+}
+
+.pagina.virando {
+  transform: rotateY(-180deg);
+}
+
+img {
+  width: 90%;
+  max-width: 420px;
+  border-radius: 25px;
+  margin: 20px 0;
+}
+
+.bonecos {
+  font-size: 40px;
+  animation: pulo 2s infinite;
+}
+
+button {
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  background: #f48fb1;
+  color: white;
+  font-size: 18px;
+}
+
+.final {
+  background: linear-gradient(#ffd1dc, #fff);
+}
+
+@keyframes pulo {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
